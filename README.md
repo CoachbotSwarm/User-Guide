@@ -1,7 +1,7 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: April 3, 2024
+Last Updated: August 7th, 2024
 
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
@@ -17,15 +17,14 @@ The arena is shown above with the axis labeled and the play field highlighted. T
 
 #### Coachbots
 
-The coachbots communicate over a server with each other and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the communication radius. For more information on sending messages, please refer to Section III.B. These purple, cylindrical robots have unique IDs which will be mapped to the initial positions file you submit to the repository (Section II.A.1). 
+The coachbot robots communicate over a server with each other and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the communication radius. For more information on sending messages, please refer to Section III.B. These purple, cylindrical robots have unique IDs which will be mapped to the initial positions file you submit to the repository (Section II.A.1). 
 
 ### Getting Started with Git
+For our testbed, we currently use the popular system, Github, as a platform for users to submit their experiments to and receive results. To get started, make an account on https://github.com/ (a free account will be sufficient for our system). There are two popular ways to use Github on your local machine, which are explained below. Our Github organization, Coachbot-Swarm, houses the repositories for experiment submission and example code as well as private user repositories. ***https://github.com/Coachbot-Swarm***
 
-The Github repository to submit your code and access its results is located at https://github.com/dornadulavaishnavi/CoachbotSwarm/tree/main
+#### Requesting Access to the Organization
 
-#### Requesting Access to the Repo
-
-To gain access to push your code to the repo, email us at coachbotswarmsystem@gmail.com with your name, university, and github username and/or email address associated with the account. This email could be different from the one you provide in Section II.A.3 to receive notifications on. You can find your github username by clicking on your profile picture in the top right corner and going to “Your Profile”. Your username will be underneath your large profile picture icon on the left side. We will email you when you have contributor access and you should be able to view a notification confirming this by clicking the tray icon in the upper right, next to your profile icon. If you already have git installed on your machine, skip ahead to Section II. If not, continue below for steps on installing git.
+To gain access to our Coachbot-Swarm organization and start submitting experiments, email us at coachbotswarmsystem@gmail.com with your name, university (if applicable), and github username associated with the account. You can find your github username by clicking on your profile picture in the top right corner and going to “Your Profile”. Your username will be underneath your large profile picture icon on the left side. After emailing us, users will receive an email (to the address linked to the Github username) inviting them to join the Coachbot-Swarm organization. Please allow up to one business day for this invitation from when we were emailed. Once the user accepts the invite to the organization, they'll get write access to two repositories. The first of the repositories is named submission_repo, where users will be able to, as the name suggests, submit experiments. Details on this process are outlined in sections below. The second is a private repository which has the same name as the Github username that was requested to be a collaborator to the platform. This repository is where the user and any collaborators they choose to add can iterate on experiments, prep files for submission, and access results. This private repository contains a skeleton template for the 4 files explained below that a submission is comprised of. Further sections below walk through the files needed for submission and the available robot API functions. If you already have git installed on your machine, skip ahead to Section II. If not, continue below for steps on installing git.
 
 #### Github Desktop
 
@@ -34,6 +33,13 @@ Github Desktop is a convenient interface to utilize git tools without needing to
 #### Terminal
 
 To use git through your preferred terminal, you must first download the appropriate packages. Follow this link to download Git for your OS: https://github.com/git-guides/install-git. Once you have downloaded git and checked for successful installation, you can close the repo. In the Github repo linked above, select the green “< > Code” dropdown button and copy either the https or ssh link. Which to choose is a matter of personal preference, but here is a reference to learn more about the differences: https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories.  In your terminal, navigate to where you want the local repo to be housed. Type *git clone* and paste the https or ssh link and hit enter. This will clone the repo to your local folder and you can now create your folder in the code queue. *git status* will tell you if there are any changes on your local system that have not been sent to the repo. Please remember to always *git pull* before you push and save a local copy of your code outside the repo. A quick guide to important and commonly used git commands can be found here: https://training.github.com/downloads/github-git-cheat-sheet/. The commands that will most commonly be used are *git pull, git status, git add, git commit,* and *git push*.
+
+#### Note for Chromebook Users
+Github is not inherently supported on Chromebooks and thus will require some extra setup. We recommend following these two guides to get git set up either for terminal or Github Desktop usage.
+
+GitHub Desktop Setup Guide: https://www.addictivetips.com/chromebook/install-github-desktop-on-chrome-os/
+
+Git Terminal Guide: https://www.geeksforgeeks.org/how-to-install-git-on-chrome-os/
 
 ## Submitting your Code
 
