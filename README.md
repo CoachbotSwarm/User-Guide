@@ -41,15 +41,30 @@ GitHub Desktop Setup Guide: https://www.addictivetips.com/chromebook/install-git
 
 Git Terminal Guide: https://www.geeksforgeeks.org/how-to-install-git-on-chrome-os/
 
+## Getting Familiar with the System through the Example Repository
+The third repository seen in the organization is *Examples*. This repository contains various examples of submissions highlighting different robot API calls and is a great starting reference point to get familiar with how to submit to the Coachbot Swarm Platform. The simple steps below will help users submit their first experiment to the platform.
+1. Clone the Example repository to your local system
+2. Navigate to the "Simple Example" Folder and view the 4 files present which make up a submission
+3. Clone your private repository to your local system (this will be the repository named with your github username that you received access to once you accepted the invitation to join the Coachbot-Swarm organization)
+4. Copy these 4 files to your private repository (without the folder)
+5. Open the email_simple_example.txt file and enter in the email address you would like to be associated with this submission
+6. Change the name of the github_username.json file to be the github username that matches the name of your private repository (ex. if my github username/repo name is dornadulavaishnavi, then my new file would be dornadulavaishnavi.json)
+7. Push these 4 files to the main branch of the private repository
+8. Clone the *submission_repo* repository to your local system
+9. Copy just the renamed .json file to the *submission_repo* and push to the main branch
+10. Your example code has now been submitted to run on the Coachbot Swarm Testbed (Note: when the testbed is running, the submission is immediately loaded locally and deleted from the repository)
+11. Users can expect to receive up to 3 emails from the system per submission, one confirming validity, one for the start of the experiment, and the last being a notification of completion.
+12. The results of the experiment will be found on a new branch in the user's private repository with the appropriate time stamp.
+
+To begin experimenting with the platform, we recommend taking a look at these files and editing them to create your first submission. Try changing the initial positions and number of robots in the **init_pose.csv** file or edit parameters to change behaviors such as how long the robots drive for or their LED color to understand how the API calls work.
+ 
 ## Submitting your Code
 
-Every submission to our system must be a folder with three files. The first is a .txt file called **email.txt** which simply contains the email address that should be contacted about e submitted code. The second file specifies the initial positions of the robots before the user code is run. Specifications of that file’s format and restrictions on robot positions are outlined in Section II.A.1. The third mandatory file is the code that will be uploaded to all active robots. This file, **usr_code.py**, must be written in python and formatted in the way outlined in Section II.A.2. The robots run python 2.7.16. There is a sample folder in the repo containing all three required files and a template for usr_code.py in the **Example_Folder**. Remember that your code should be placed in a folder in the **Code_Queue** folder to be run.
+Every submission to our system consists of 4 components. The first is a file that you will push to the *submission_repo* when you are ready to run your experiment on the physical testbed. This file is of type .json and points to where to find the required input files (detailed below) in the main branch of your private repository. These 3 required input files 
+An experiment comprises of  The first is a .txt file called **email.txt** which simply contains the email address that should be contacted about e submitted code. The second file specifies the initial positions of the robots before the user code is run. Specifications of that file’s format and restrictions on robot positions are outlined in Section II.A.1. The third mandatory file is the code that will be uploaded to all active robots. This file, **usr_code.py**, must be written in python and formatted in the way outlined in Section II.A.2. The robots run python 2.7.16. There is a sample folder in the repo containing all three required files and a template for usr_code.py in the **Example_Folder**. Remember that your code should be placed in a folder in the **Code_Queue** folder to be run. 
+A skeleton example of all 4 of these components are given in your private repository and other examples are included in the Example repository of the organization.
 
 ### Input Files
-
-#### Example Submissions
-
-Example Submission with these three mandatory files are located within the Example_Folder/Submission_Examples directory of the repository. These files will showcase various robot functionalities and are a good place to start familiarizing yourself with our platform and robot capabilities. To begin experimenting with the platform, we recommend taking a look at these files and editing them to create your first submission. Try changing the initial positions and number of robots in the **init_pose.csv** file or edit parameters to change behaviors such as how long the robots drive for or their LED color to understand how the API calls work. Be sure to change the email in the **email.txt** appropriately.
 
 #### Initial Positions
 
