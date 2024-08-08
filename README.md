@@ -60,11 +60,29 @@ To begin experimenting with the platform, we recommend taking a look at these fi
  
 ## Submitting your Code
 
-Every submission to our system consists of 4 components. The first is a file that you will push to the *submission_repo* when you are ready to run your experiment on the physical testbed. This file is of type .json and points to where and under what name to find the required input files (detailed below) in the main branch of your private repository. These 3 required input files are the code that the robots will run, initial positions the robots should be in at the start of the experiment, and lastly, an email to be notified about experiment progress. The code that will be uploaded to all active robots, referred to here on out as **usr_code.py**, must be written in python and formatted in the way outlined in 
-An experiment comprises of  The first is a .txt file called **email.txt** which simply contains the email address that should be contacted about e submitted code. The second file specifies the initial positions of the robots before the user code is run. Specifications of that file’s format and restrictions on robot positions are outlined in Section II.A.1. The third mandatory file is the code that will be uploaded to all active robots. This file, **usr_code.py**, must be written in python and formatted in the way outlined in Section II.A.2. The robots run python 2.7.16. There is a sample folder in the repo containing all three required files and a template for usr_code.py in the **Example_Folder**. Remember that your code should be placed in a folder in the **Code_Queue** folder to be run. 
+Every submission to our system consists of 4 components. The first is a file that you will push to the *submission_repo* when you are ready to run your experiment on the physical testbed. This file is of type .json, referred to in this guide as **submission_repo.json**, and points to where and under what name to find the required input files (detailed below) in the main branch of your private repository. These 3 required input files are the code that the robots will run, initial positions the robots should be in at the start of the experiment, and lastly, an email to be notified about experiment progress. The code that will be uploaded to all active robots, referred to here on out as **usr_code.py**, must be written in python (robots currently run python 2.7.16) and formatted in the way outlined in sections below. The second file, referred to as **init_pose.csv** specifies the initial positions of the robots before the user code is run. Lastly, we have a text file, referred to as **email.txt** which simply contains the email address that should be contacted about that experiment. Remember to make sure the name of these three files match the ones you right in the **submission_repo.json** file. 
+
+After pushing these 3 completed, required files into the main branch of the user's private repositoy, make sure to fill out the *github_username.json" with the appropriate files names and rename this .json file to the github username of the private repository. This .json file then needs to be copied and pushed to the submission_repo repository to be submitted to our platform and run on the Coachbot robots. See the Github section above for a refresher on how to contribute code to a repository. Once the .json has been pushed to the submission_repo repository, the experiment has been successfully submitted to the testbed!
+
 A skeleton example of all 4 of these components are given in your private repository and other examples are included in the Example repository of the organization.
 
 ### Input Files
+
+#### User Code
+
+The user code file must be named **usr_code.py** and be written in python. This same code will be uploaded to every robot that will run your code. Section III below explains the available robot functions and various functionality such as sending messages and logging. Instead of a main function, the robot code will look for a function called *usr(robot)* so be sure to add that to your code as shown below. It is also good practice to add a small delay in the while loop (See Section III.A.8 for function specifics).
+
+**usr_code.py** format:
+
+*imports  
+def usr(robot):  
+&emsp; # write code here  
+&emsp; &emsp; while condition:  
+&emsp; &emsp; &emsp; robot.delay() # defaults to 20 ms which is sufficient  
+&emsp; &emsp; &emsp; # more code here  
+return condition*  
+
+The current time limit for code runtime is 10 minutes so if your code hits this limit, it will pause the code and return all the information it received until that point.
 
 #### Initial Positions
 
@@ -91,27 +109,14 @@ Example **init_pose.csv** file:
 
 If your **init_pose.csv** file does not abide by the rules above, you will receive an email and can check the **input_pose_errors.csv** file for details on where it failed. 
 
-#### User Code
-
-The user code file must be named **usr_code.py** and be written in python. This same code will be uploaded to every robot that will run your code. Section III below explains the available robot functions and various functionality such as sending messages and logging. Instead of a main function, the robot code will look for a function called *usr(robot)* so be sure to add that to your code as shown below. It is also good practice to add a small delay in the while loop (See Section III.A.8 for function specifics).
-
-**usr_code.py** format:
-
-*imports  
-def usr(robot):  
-&emsp; # write code here  
-&emsp; &emsp; while condition:  
-&emsp; &emsp; &emsp; robot.delay() # defaults to 20 ms which is sufficient  
-&emsp; &emsp; &emsp; # more code here  
-return condition*  
-
-The current time limit for code runtime is 10 minutes so if your code hits this limit, it will pause the code and return all the information it received until that point.
-
 #### Email
 
 The **email.txt** file should simply contain the email address all alerts should be sent to. Users will receive an email notification when their code begins to run and one when it has completed. The User may also instead receive an email letting them know that their initial positions were invalid or their code hit the time limit.
 
 ### GitHub Interface to the Coachbot System
+
+When you accept the invitation to the Github organization, you will view 3 repositories: submission_repo, Example, and one named with your github username. The submission_repo, discussed above, 
+https://github.com/Coachbot-Swarm/submission_repo
 
 The github repo to submit your code is located at https://github.com/dornadulavaishnavi/CoachbotSwarm/tree/main. Your code should be uploaded to the Code_Queue folder in the main branch of the repo. To gain access to push code to this repo, please send us an email to be added as a collaborator. Once you have access, clone the repo to your local computer using https or ssh. To avoid merge conflicts, please remember to *git pull* before you try to upload your code. Copy your required files into a uniquely named folder and be sure to note this name, as this will be the name of the folder containing the output of your run.
 
