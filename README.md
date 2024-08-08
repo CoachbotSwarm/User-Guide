@@ -115,10 +115,8 @@ The **email.txt** file should simply contain the email address all alerts should
 
 ### GitHub Interface to the Coachbot System
 
-When you accept the invitation to the Github organization, you will view 3 repositories: submission_repo, Example, and one named with your github username. The submission_repo, discussed above, 
-https://github.com/Coachbot-Swarm/submission_repo
-
-The github repo to submit your code is located at https://github.com/dornadulavaishnavi/CoachbotSwarm/tree/main. Your code should be uploaded to the Code_Queue folder in the main branch of the repo. To gain access to push code to this repo, please send us an email to be added as a collaborator. Once you have access, clone the repo to your local computer using https or ssh. To avoid merge conflicts, please remember to *git pull* before you try to upload your code. Copy your required files into a uniquely named folder and be sure to note this name, as this will be the name of the folder containing the output of your run.
+When you accept the invitation to the Github organization, you will be able to view 3 repositories: submission_repo, Example, and one named with your github username. The submission_repo, discussed above, 
+https://github.com/Coachbot-Swarm/submission_repo, is where users can upload their submission file to be run on the Coachbot Swarm Testbed. While the system is active, the submission is immediately loaded locally and removed from the repository. Details for the contents of this submission file (**github_username.json**) are explained above and examples can be found in the private user or Example repository. The Example repository contains various sample code of the four components of a submission highlighting different robot API calls and is a great starting reference point to get familiar with how to submit to or write algorithms for the Coachbot Swarm Platform. The last repository is the user's private repository whose name will match the user's github username. This repository is not visible to any other users of the Coachbot platform and users can add other collaborators to their repository that they wish. Users can iteratively build their code using the version control nature of github or simply upload code to their repository when they have finished developing. The algorithm user code, initial positions, and email files must be located in the main branch of the repository. Ensure that the name of these three files are specified correctly in the submission file which is pushed to the submission repo. Users will receive up to three emails per experiment submitted to the corresponding email specified in the submission. This will notify users for if their input files were valid, when their experiment has begun, and when their results have been returned. The results of your experiment can be found in your private repository in a new branch. This branch will be named with the timestamp of when the experiment ended.
 
 ## Writing Code for the Coachbots
 
@@ -196,17 +194,19 @@ Logging is a very useful debugging tool, especially in a swarm, where many robot
 
 ## Getting the Results
 
-When your code has finished running, you will receive an email from the system letting you know so. When you pull the repo, the **Completed_Runs** folder will have your results in your folder with the files explained below.
+When your code has finished running, you will receive an email from the system letting you know so. View your private repository (named with the registered user's github repository) to access the results. The returned files will be in a new branch named with the timestamp of when the experiment finished. To switch branches, click on the dropdown menu , defaults to "main", near the top left of the screen, below the repository name to view the full list of available branches.
 
 ### Result Format
 
-Within this folder, you should see the following directory tree (new files and directories are underlined).
+Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. This branch will roughly resemble the following directory tree (new files and directories are in bold).
 
 &emsp; FolderName  
 &emsp; &emsp; usr_code.py  
 &emsp; &emsp; init_pose.csv  
 &emsp; &emsp; email.txt  
-&emsp; &emsp; <ins> init_pose_errors.csv </ins>  
+&emsp; &emsp; <ins> init_pose_errors.csv </ins>
+&emsp; &emsp; <ins> sim_data.txt.csv </ins>
+&emsp; &emsp; <ins> sim_output.mp4 </ins>
 &emsp; &emsp; <ins> output_logs </ins>  
 &emsp; &emsp; &emsp; <ins> ID_mapping.csv </ins>  
 &emsp; &emsp; &emsp; <ins> camera_video.mp4 </ins>  
@@ -215,9 +215,6 @@ Within this folder, you should see the following directory tree (new files and d
 &emsp; &emsp; <ins> automation_errors </ins>  
 
 The **init_pose_errors.csv** will contain the contents of **init_pose.csv** or list any issues with the initial poses specified. The output_logs folder will hold all the outputs from the algorithm run. Since the ID you specify in the **init_pose.csv** file might not match the physical robot ID, the **ID_mapping.csv** file specifies which robot corresponds to which virtual ID. The .mp4 file is the recording of the run from our overhead raspberry pi camera. The logging files (**#_logging**) will be named with the virtual ID of the robot it pertains to and contain the position of the corresponding robot at every timestep of the run. This csv file is formatted in a timestep, x position, y position, theta angle in radians for each line. The # file is the virtual ID of the pertaining robot and will have any information you choose to write to the **experiment_log** file in your code. The **automation_errors** file will list any high level errors such as runtime limits or robots trying to exit the play field.
-
-### Accessing the Output
-Once you get an email that your code has finished running, you will be able to access your code’s output files in the **Completed_Runs** folder of the repo. Use the git pull command to load the folders onto your local machine and navigate to the folder with the unique name you had uploaded to the **Code_Queue** folder. Once you copy the contents of your folder to somewhere outside your repo, please delete your folder from the **Completed_Runs** and push your code. (Remember to always pull before pushing to avoid merge conflicts).
 
 ### Automation Error Messages:
 
@@ -251,3 +248,6 @@ The second reason could be that the system could not find an **email.txt** file 
 
 **Q**: If I don’t care how many robots are used in my experiment or where they start, do I still need to submit an initial positions file?  
 **A**: Yes, you will still need to submit an **init_pose.csv** file in your experiment for it to be run. Feel free to use the files provided in the **Example Folder** and edit as needed.
+
+**Q**: I uploaded my submission (.json file) to the submission_repo and no longer see it. I also have not received an email from the testbed confirming that my input files are valid. Did my submission go through correctly?
+**A**: If you no longer see your submission in the submission repo, that means that the testbed was active and locally loaded your file. Please ensure that the .json file submitted's name matches that of the private user github repository where the algorithm can be found. Also double check the the file names listed in the .json file match those of the files in the main branch of the user's private repository.
