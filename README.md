@@ -152,13 +152,14 @@ Example: *curr_time = robot.get_clock()*
 
 #### robot.send_msg(msg)
 
+More information about this send function and the receive function are explained in the Section below.
 Parameters: msg should be a string that is less than 64 bytes or it will be truncated. This msg can be the output of the struct.pack() function explained in the section below.  
 Output: True is successful, False if not  
 Example: *robot.send_msg(struct.pack(‘fffii’, float_0, float_1, float_2, int_0, int_1))*
 
 #### robot.recv_msg()
 
-Parameters: none  
+Parameters: none
 Output: Returns the messages in the buffer since the last call of this function.   
 Example: *msgs = robot.recv_msg()*
 
