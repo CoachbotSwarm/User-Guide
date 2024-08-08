@@ -176,17 +176,25 @@ Example: *robot.delay(500)*
 
 ### Sending and Receiving Messages
 
-Sending and receiving messages is done through the *robot.send_msg()* and *robot.recv_msg()* functions explained above. The messages that these functions handle are created and read using *struct.pack()* and *struct.unpack()* so be sure to import struct at the top of your file if you plan to use messaging. For best results, add in a delay between any send and receive function calls. Example usage of these functions are shown below.
+Sending and receiving messages is done through the *robot.send_msg()* and *robot.recv_msg()* functions explained above. The messages that these functions handle are created and read using *struct.pack()* and *struct.unpack()* so be sure to import struct at the top of your file if you plan to use messaging. For best results, add in a short (50ms) delay between any send and receive function calls. Example usage of these functions are shown below.
 
-*Struct.pack()* example:  
+*struct.pack()* example:  
 *struct.pack(‘fffii’, float_0, float_1, float_2, int_0, int_1)*
 
-The first argument, ‘fffii’, specifies the type of variables being sent in what order and quantity. In this example, I am sending three floats and two integers. The remaining parameters are the corresponding variables I am sending in the message
+The first argument in the example above, ‘fffii’, specifies the type of variables being sent in what order and quantity. In this example, I am sending three floats and two integers. The remaining parameters are the corresponding variables I am sending in the message.
 
-*Struct.unpack()* example:  
+This line would be called in the following way, where the struct_pack() function is called and passed into the send_msg() function: robot.send_msg(struct.pack(‘fffii’, float_0, float_1, float_2, int_0, int_1))
+
+*struct.unpack()* example:  
 *struct.unpack(‘fffii’, msg_received[0][:24])*
 
-The first argument, ‘fffii’ specifies the expected message content types. The second parameter specifies the variable I am reading from. Whatever variable I save the output of the *robot.recv_msg()* in will contain the entire buffer of messages. In this example, I am reading in the first message in the buffer and the [:24] specifies the message length, which is four times the number variables being sent.
+The first argument, ‘fffii’ specifies the expected message content types. The second parameter specifies the variable I am reading from. Whatever variable I save the output of the *robot.recv_msg()* in will contain the entire buffer of messages. In this example, I am reading in the first message in the buffer and the [:24] specifies the message length, which is the byte length of the expected message. Since floats and integers are both four bytes each, we determine this message length by multiplying the number of variables expected in the message with the size of each variable, therefore, 6 x 4 = 24..
+
+This function would be called in the following way, where the struct_unpack() function is called after receiving a message:
+
+msgs = robot.recv_msg()
+
+struct.unpack('ffi', msg[0][:12])
 
 ### Logging from the Robots
 
