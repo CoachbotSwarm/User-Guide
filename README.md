@@ -1,7 +1,7 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: August 7th, 2024
+Last Updated: August 9th, 2024
 
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
@@ -13,18 +13,14 @@ If you have any questions, comments or concerns, please email us at coachbotswar
 #### Arena
 ![Arena and Play Area](https://github.com/dornadulavaishnavi/coachbotuserguide.github.io/assets/90789243/22bbe2c1-af4e-432a-ae49-c05bfe4c342a)
 
-The arena is shown above with the axis labeled and the play field highlighted. The play field runs from -1.2 to 1.0 meters in the x and -1.4 to 2.35 meters in the y. The arena houses charging rails for the robots along two of its walls and the swarm will charge between submissions if more than half the swarm is approaching a low voltage. 
+The arena is shown above with the axis labeled and the play field highlighted. The play field runs from -1.2 to 1.0 meters in the x and -1.4 to 2.35 meters in the y. The arena houses charging rails for the robots along two of its walls and the swarm will automatically charge between submissions if more than half the swarm is approaching a low voltage. 
 
 #### Coachbots
 
-The coachbot robots communicate over a server with each other and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the communication radius. For more information on sending messages, please refer to Section III.B. These purple, cylindrical robots have unique IDs which will be mapped to the initial positions file you submit to the repository (Section II.A.1). 
+The coachbot robots communicate with each other over a server and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the desired communication radius. For more information on sending messages, please refer to sections below about the available robot API and communication. These purple, cylindrical robots have unique IDs which will be mapped to the positions specified by the user in one of their submission files detailed below.
 
 ### Getting Started with Git
 For our testbed, we currently use the popular system, Github, as a platform for users to submit their experiments to and receive results. To get started, make an account on https://github.com/ (a free account will be sufficient for our system). There are two popular ways to use Github on your local machine, which are explained below. Our Github organization, Coachbot-Swarm, houses the repositories for experiment submission and example code as well as private user repositories. ***https://github.com/Coachbot-Swarm***
-
-#### Requesting Access to the Organization
-
-To gain access to our Coachbot-Swarm organization and start submitting experiments, email us at coachbotswarmsystem@gmail.com with your name, university (if applicable), and github username associated with the account. You can find your github username by clicking on your profile picture in the top right corner and going to “Your Profile”. Your username will be underneath your large profile picture icon on the left side. After emailing us, users will receive an email (to the address linked to the Github username) inviting them to join the Coachbot-Swarm organization. Please allow up to one business day for this invitation from when we were emailed. Once the user accepts the invite to the organization, they'll get write access to two repositories. The first of the repositories is named submission_repo, where users will be able to, as the name suggests, submit experiments. Details on this process are outlined in sections below. The second is a private repository which has the same name as the Github username that was requested to be a collaborator to the platform. This repository is where the user and any collaborators they choose to add can iterate on experiments, prep files for submission, and access results. This private repository contains a skeleton template for the 4 files explained below that a submission is comprised of. Further sections below walk through the files needed for submission and the available robot API functions. If you already have git installed on your machine, skip ahead to Section II. If not, continue below for steps on installing git.
 
 #### Github Desktop
 
@@ -40,6 +36,10 @@ Github is not inherently supported on Chromebooks and thus will require some ext
 GitHub Desktop Setup Guide: https://www.addictivetips.com/chromebook/install-github-desktop-on-chrome-os/
 
 Git Terminal Guide: https://www.geeksforgeeks.org/how-to-install-git-on-chrome-os/
+
+#### Requesting Access to the Organization
+
+To gain access to our Coachbot-Swarm organization and start submitting experiments, email us at coachbotswarmsystem@gmail.com with your name, university (if applicable), and github username associated with the account. You can find your github username by clicking on your profile picture in the top right corner and going to “Your Profile”. Your username will be underneath your large profile picture icon on the left side. After emailing us, users will receive an email (to the address linked to the Github username) inviting them to join the Coachbot-Swarm organization. Please allow up to one business day for this invitation from when we were emailed. Once the user accepts the invite to the organization, they'll get write access to two repositories. The first of the repositories is named submission_repo, where users will be able to, as the name suggests, submit experiments. Details on this process are outlined in sections below. The second is a private repository which has the same name as the Github username that was requested to be a collaborator to the platform. This repository is where the user and any collaborators they choose to add can iterate on experiments, prep files for submission, and access results. This private repository contains a skeleton template for the 4 files explained below that a submission is comprised of. Further sections below walk through the files needed for submission and the available robot API functions. If you already have git installed on your machine, skip ahead to Section II. If not, continue below for steps on installing git.
 
 ## Getting Familiar with the System through the Example Repository
 The third repository seen in the organization is *Examples*. This repository contains various examples of submissions highlighting different robot API calls and is a great starting reference point to get familiar with how to submit to the Coachbot Swarm Platform. The simple steps below will help users submit their first experiment to the platform.
