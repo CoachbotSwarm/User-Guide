@@ -128,7 +128,7 @@ Check out our API Overview tutorial here for a quick introduction:
 
 #### robot.set_vel(left,right)
 
-Parameters: left and right should be whole numbers between -50 and 50 that indicate wheel speeds corresponding to the respective wheel. 0 being no movement and 50 being the fastest possible speed. The negative values indicate that the wheel would spin backwards at that speed. These values have no unit.  
+Parameters: left and right should be whole numbers between -50 and 50 that indicate wheel speeds corresponding to the respective wheel. 0 being no movement and 50 being the fastest possible speed. The negative values indicate that the wheel would spin backwards at that speed. This function sets the speed for 1 second before stopping. These values have no unit.  
 
 Output: none  
 
@@ -220,11 +220,11 @@ Logging is a very useful debugging tool, especially in a swarm, where many robot
 
 ## Getting the Results
 
-When your code has finished running, you will receive an email from the system letting you know. View your private repository (named with the registered user's github repository) to access the results. The returned files will be in a new branch named with the timestamp of when the experiment finished. To switch branches, click on the dropdown menu , defaults to "main", near the top left of the screen, below the repository name to view the full list of available branches.
+When your code has finished running, you will receive an email from the system letting you know. View your private repository (named with the registered user's github repository) to access the results. The returned files will be in a new branch named with the timestamp of when the experiment finished. To switch branches, click on the dropdown menu, defaults to "main", near the top left of the screen, below the repository name to view the full list of available branches.
 
 ### Result Format
 
-Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. This branch will roughly resemble the following directory tree (new files and directories are in bold).
+Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The code that ran in the system will be named the default submission file names, usr_code.py, init_pose.csv, and email.txt. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. This branch will roughly resemble the following directory tree (new files and directories are in bold).
 
 &emsp; FolderName  
 &emsp; &emsp; usr_code.py  
