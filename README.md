@@ -1,7 +1,7 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: August 9th, 2024
+Last Updated: August 20th, 2024
 
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
@@ -17,7 +17,7 @@ The arena is shown above with the axis labeled and the play field highlighted. T
 
 #### Coachbots
 
-The coachbot robots communicate with each other over a server and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the desired communication radius. For more information on sending messages, please refer to sections below about the available robot API and communication. These purple, cylindrical robots have unique IDs which will be mapped to the positions specified by the user in one of their submission files detailed below.
+The coachbot robots communicate with each other over a server and can do all-to-all communication. If you wish to restrict the communication radius, you must manually do that in your algorithm. A common way to do this is to send location along with the message so each robot can calculate its distance to the robot sending the message and discard it if it is outside the desired communication radius. For more information on sending messages, please refer to sections below about the available robot API and communication. These purple, cylindrical robots have unique IDs which will be mapped to the positions specified by the user in one of their submission files detailed below. Each robot is around 11cm in diameter and is 14cm tall.
 
 ### Getting Started with Git
 For our testbed, we currently use the popular system, Github, as a platform for users to submit their experiments to and receive results. To get started, make an account on https://github.com/ (a free account will be sufficient for our system). There are two popular ways to use Github on your local machine, which are explained below. Our Github organization, Coachbot-Swarm, houses the repositories for experiment submission and example code as well as private user repositories. ***https://github.com/Coachbot-Swarm***
