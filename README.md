@@ -64,6 +64,20 @@ Every submission to our system consists of 4 components. The first is a file tha
 
 After pushing these 3 completed, required files into the main branch of the user's private repositoy, make sure to fill out the *github_username.json* with the appropriate files names and rename this .json file to the github username of the private repository. The 3 required input files described in the paragraph above are not required to be name the same as the terms we use in this guide but they do need to be the same file types and the name must be specified in the .son file.  This .json file then needs to be copied and pushed to the submission_repo repository to be submitted to our platform and run on the Coachbot robots. See the Github section above for a refresher on how to contribute code to a repository. Once the .json has been pushed to the submission_repo repository, the experiment has been successfully submitted to the testbed!
 
+Another simple way to submit your code on the submission Github repository is to directly create the file on the github website. Navigate to the submission repository home page and find the button on the right that says, 'Add file'. Click on that button and select the 'Create New File' option from the drop down menu. Here, you can name your file *your_github_username.json* with your personal username and fill in the contents as shown in the example file in the private repository or as shown below with the default file names.
+
+{
+
+&emsp; "usercode": "usr_code.py",
+
+&emsp; "initialpositions": "init_pose.csv",
+
+&emsp; "email": "email.txt"
+
+}
+
+
+
 A skeleton example of all 4 of these components are given in your private repository and other examples are included in the Example repository of the organization.
 
 ### Input Files
