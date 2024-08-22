@@ -241,19 +241,19 @@ When your code has finished running, you will receive an email from the system l
 
 Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The code that ran in the system will be named the default submission file names, usr_code.py, init_pose.csv, and email.txt. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. This branch will roughly resemble the following directory tree (new files and directories are in bold).
 
-&emsp; FolderName  
-&emsp; &emsp; usr_code.py  
-&emsp; &emsp; init_pose.csv  
-&emsp; &emsp; email.txt  
-&emsp; &emsp; <ins> init_pose_errors.csv </ins>
-&emsp; &emsp; <ins> sim_data.txt.csv </ins>
-&emsp; &emsp; <ins> sim_output.mp4 </ins>
-&emsp; &emsp; <ins> output_logs </ins>  
-&emsp; &emsp; &emsp; <ins> ID_mapping.csv </ins>  
-&emsp; &emsp; &emsp; <ins> camera_video.mp4 </ins>  
-&emsp; &emsp; <ins> #_logging.csv </ins>  
-&emsp; &emsp; <ins> # </ins>  
-&emsp; &emsp; <ins> automation_errors </ins>  
+<p>timestamp_branch_name <br>
+&emsp; usr_code.py <br>  
+&emsp; init_poses.csv <br>
+&emsp; email.txt <br>
+&emsp; <strong>init_pose_errors.csv</strong> <br>
+&emsp; <strong>sim_data.txt</strong> <br>
+&emsp; <strong>sim_output.mp4</strong> <br>
+&emsp; <strong>output_logs</strong> <br>
+&emsp; &emsp; <strong>ID_mapping.csv</strong> <br>
+&emsp; &emsp; <strong>camera_video.mp4</strong> <br>
+&emsp; &emsp; <strong>#_logging.csv</strong> <br>
+&emsp; &emsp; <strong>#</strong> <br>
+&emsp; &emsp; <strong>automation_errors</strong></p>
 
 The **init_pose_errors.csv** will contain the contents of **init_pose.csv** or list any issues with the initial poses specified. The output_logs folder will hold all the outputs from the algorithm run. Since the ID you specify in the **init_pose.csv** file might not match the physical robot ID, the **ID_mapping.csv** file specifies which robot corresponds to which virtual ID. The .mp4 file is the recording of the run from our overhead raspberry pi camera. The logging files (**#_logging**) will be named with the virtual ID of the robot it pertains to and contain the position of the corresponding robot at every timestep of the run. This csv file is formatted in a timestep, x position, y position, theta angle in radians for each line. The # file is the virtual ID of the pertaining robot and will have any information you choose to write to the **experiment_log** file in your code. The **automation_errors** file will list any high level errors such as runtime limits or robots trying to exit the play field.
 
