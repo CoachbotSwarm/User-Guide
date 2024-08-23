@@ -6,6 +6,8 @@ Last Updated: August 22th, 2024
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
 
+If you have any questions about setting up the experiment you would like to run, please reach out to us with any inquiries.
+
 ## Overview of System
 
 ### How Does the Swarm Function
