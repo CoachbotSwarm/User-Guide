@@ -8,6 +8,10 @@ If you have any questions, comments or concerns, please email us at coachbotswar
 
 If you have any questions about setting up the experiment you would like to run, please reach out to us with any inquiries.
 
+Check out our User Overview here for a quick introduction:
+
+[![](https://markdown-videos-api.jorgenkh.no/youtube/-gkg-sUAAio)](https://youtu.be/-gkg-sUAAio)
+
 ## Overview of System
 
 ### How Does the Swarm Function
