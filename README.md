@@ -10,7 +10,7 @@ If you have any questions about setting up the experiment you would like to run,
 
 Check out our User Overview here for a quick introduction:
 
-[![](https://markdown-videos-api.jorgenkh.no/youtube/-gkg-sUAAio)](https://youtu.be/-gkg-sUAAio)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/nFMVz55OqjY)](https://youtu.be/nFMVz55OqjY)
 
 ## Overview of System
 
