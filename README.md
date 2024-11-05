@@ -10,7 +10,7 @@ If you have any questions about setting up the experiment you would like to run,
 
 If you intend to use the platform for research purposes, please use the citation below:
 
-Vaishnavi Dornadula, C. Lin Liu, Marko Vejnovic, Michelle Zhang and Michael Rubenstein. (in press). Coachbot Swarm Testbed: A 100-Robot Automated and Remotely-Accessible Platform. Springer SPAR March 2025
+**Vaishnavi Dornadula, C. Lin Liu, Marko Vejnovic, Michelle Zhang and Michael Rubenstein. (in press). Coachbot Swarm Testbed: A 100-Robot Automated and Remotely-Accessible Platform. Springer SPAR March 2025**
 
 Check out our User Overview here for a quick introduction:
 
