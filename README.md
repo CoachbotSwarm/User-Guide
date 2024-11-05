@@ -1,12 +1,16 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: August 22th, 2024
+Last Updated: November 5th, 2024
 
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
 
 If you have any questions about setting up the experiment you would like to run, please reach out to us with any inquiries.
+
+If you intend to use the platform for research purposes, please use the citation below:
+
+Vaishnavi Dornadula, C. Lin Liu, Marko Vejnovic, Michelle Zhang and Michael Rubenstein. (in press). Coachbot Swarm Testbed: A 100-Robot Automated and Remotely-Accessible Platform. Springer SPAR March 2025
 
 Check out our User Overview here for a quick introduction:
 
