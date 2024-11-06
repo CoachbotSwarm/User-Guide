@@ -32,6 +32,10 @@ The coachbot robots communicate with each other over a server and can do all-to-
 ### Getting Started with Git
 For our testbed, we currently use the popular system, Github, as a platform for users to submit their experiments to and receive results. To get started, make an account on https://github.com/ (a free account will be sufficient for our system). There are two popular ways to use Github on your local machine, which are explained below. Our Github organization, Coachbot-Swarm, houses the repositories for experiment submission and example code as well as private user repositories. ***https://github.com/Coachbot-Swarm***
 
+Check out this helpful YouTube tutorial on Github to learn about helpful commands and getting familiar with the process:
+
+[![](https://markdown-videos-api.jorgenkh.no/youtube/Oaj3RBIoGFc?si=UYlNl0_Ltt86i80T)](https://youtu.be/Oaj3RBIoGFc?si=UYlNl0_Ltt86i80T)
+
 #### Github Desktop
 
 Github Desktop is a convenient interface to utilize git tools without needing to use the terminal. Download the tool from https://desktop.github.com/. Look for the “Current Repository” Menu on the top left below the banner. In that dropdown menu, click “add” and select “Clone repository…”.  In the Github repo linked above, select the green “< > Code” dropdown button and copy either the https or ssh link. Which you choose is a matter of personal preference, but here is a reference to learn more about the differences: https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories. Once you have either the https or ssh link copied, go to Github Desktop and paste this link in the “URL” section. Make sure your local path points to where you want the repo to be housed and click the blue “clone” button. Now you should be able to pull by clicking “Pull Origin” in the top banner, see your changes on the left bar, commit changes in the bottom left corner, and push code with the button in the top banner. The option to push will not appear if you have no changes. Please remember to always pull before you push and save a local copy of your code outside the repo.  
