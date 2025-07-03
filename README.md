@@ -1,7 +1,9 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: November 5th, 2024
+Last Updated: July 3rd, 2025
+
+This guide will walk you through the steps to set up the required environments, how to request access to the platform, link you to the simulator, understand the repositories and files needed to make a submission, break down the robot API, and explain the results that will be returned to you. To familiarize yourself with the platform, the API, and the workflow, we highly recommend you start with submitting code from the Example folder. We also recommend using the simulator for each experiment for faster verification before submitting your algorithm to the physical platform.
 
 We ask that you respect the system and help us keep it accessible to fellow academics by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you.
