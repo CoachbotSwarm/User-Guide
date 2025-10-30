@@ -1,7 +1,7 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: July 3rd, 2025
+Last Updated: October 30th, 2025
 
 This guide will walk you through the steps to set up the required environments, how to request access to the platform, link you to the simulator, understand the repositories and files needed to make a submission, break down the robot API, and explain the results that will be returned to you. To familiarize yourself with the platform, the API, and the workflow, we highly recommend you start with submitting code from the Example folder. We also recommend using the simulator for each experiment for faster verification before submitting your algorithm to the physical platform.
 
@@ -203,7 +203,7 @@ Example: *robot.send_msg(struct.pack(‘fffii’, float_0, float_1, float_2, int
 
 Parameters: none
 
-Output: Returns the messages in the buffer since the last call of this function.   
+Output: Returns the messages in the buffer since the last call of this function. If the robot has not received a message, it will return a None type.   
 
 Example: *msgs = robot.recv_msg()*
 
@@ -237,7 +237,7 @@ This line would be called in the following way, where the struct_pack() function
 *struct.unpack()* example:  
 *struct.unpack(‘fffii’, msg_received[0][:24])*
 
-The first argument, ‘fffii’ specifies the expected message content types. The second parameter specifies the variable I am reading from. Whatever variable I save the output of the *robot.recv_msg()* in will contain the entire buffer of messages. In this example, I am reading in the first message in the buffer and the [:24] specifies the message length, which is the byte length of the expected message. Since floats and integers are both four bytes each, we determine this message length by multiplying the number of variables expected in the message with the size of each variable, therefore, 6 x 4 = 24..
+The first argument, ‘fffii’ specifies the expected message content types. The second parameter specifies the variable I am reading from. Whatever variable I save the output of the *robot.recv_msg()* in will contain the entire buffer of messages. If the robot does not see messages in the buffer, it will return None. For best practice and to account for latency in physical systems, add something in the algorithm to handle the potential case where the robot does not receive the message. For example, using blocking code in the form of a while loop to receive messages until that variable no longer reads as None. In this example, I am reading in the first message in the buffer and the [:24] specifies the message length, which is the byte length of the expected message. Since floats and integers are both four bytes each, we determine this message length by multiplying the number of variables expected in the message with the size of each variable, therefore, 6 x 4 = 24.
 
 This function would be called in the following way, where the struct_unpack() function is called after receiving a message:
 
