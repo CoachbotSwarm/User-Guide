@@ -1,7 +1,7 @@
 # Coachbot Swarm User Guide
 
 Written and Maintained by Vaishnavi Dornadula (vaishnavidornadula2026@u.northwestern.edu)  
-Last Updated: October 30th, 2025
+Last Updated: November 12th, 2025
 
 This guide will walk you through the steps to set up the required environments, how to request access to the platform, link you to the simulator, understand the repositories and files needed to make a submission, break down the robot API, and explain the results that will be returned to you. To familiarize yourself with the platform, the API, and the workflow, we highly recommend you start with submitting code from the Example folder. We also recommend using the simulator for each experiment for faster verification before submitting your algorithm to the physical platform.
 
@@ -12,7 +12,7 @@ If you have any questions about setting up the experiment you would like to run,
 
 If you intend to use the platform for research purposes, please use the citation below:
 
-**Vaishnavi Dornadula, C. Lin Liu, Marko Vejnovic, Michelle Zhang and Michael Rubenstein. (in press). Coachbot Swarm Testbed: A 100-Robot Automated and Remotely-Accessible Platform. Springer SPAR March 2025**
+**Dornadula, V., Liu, C.L., Vejnovic, M., Zhang, M., Rubenstein, M. (2026). Coachbot Swarm Testbed: A 100-Robot Automated and Remotely-Accessible Platform. In: Nilles, A., Petersen, K.H., Lam, T.L., Prorok, A., Rubenstein, M., Otte, M. (eds) Distributed Autonomous Robotic Systems. DARS 2024. Springer Proceedings in Advanced Robotics, vol 34. Springer, Cham. https://doi.org/10.1007/978-3-032-04584-3_29**
 
 Check out our User Overview here for a quick introduction:
 
